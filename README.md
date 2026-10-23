@@ -1,14 +1,14 @@
-# Pinch
+# Pinch.
 
-Pinch is a student-first financial dashboard for tracking bank balances,
+Pinch. is a student-first financial dashboard for tracking bank balances,
 understanding everyday spending, and building clear SMART financial goals.
 
 ## Current build
 
 The first main-page prototype includes:
 
-- An animated **Pinch** wordmark loading screen
-- A responsive dashboard built around a deep, dark purple visual system
+- An animated **Pinch.** wordmark loading screen
+- A responsive midnight-blue, mint, sand, and coral visual system
 - Balance visibility controls
 - Connected-account summaries
 - Week, month, and semester spending views

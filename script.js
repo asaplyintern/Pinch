@@ -18,7 +18,7 @@ const defaultGoals = [
     current: 720,
     target: 1000,
     date: '2026-12-20',
-    color: '#765091',
+    color: '#2f7182',
     symbol: '✦',
   },
   {
@@ -28,7 +28,7 @@ const defaultGoals = [
     current: 400,
     target: 800,
     date: '2027-03-01',
-    color: '#d98296',
+    color: '#ed7a75',
     symbol: '↗',
   },
 ];
@@ -267,7 +267,7 @@ function saveGoal(event) {
 
   if (!name || !target || !date || !reason) return;
 
-  const colors = ['#765091', '#d98296', '#6689b0', '#b2754c'];
+  const colors = ['#2f7182', '#ed7a75', '#63a8d5', '#c77b4d'];
   state.goals.unshift({
     id: Date.now(),
     name,
