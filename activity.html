@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Review your spending and transactions in Pinch." />
+    <meta name="theme-color" content="#102a43" />
+    <title>Activity — Pinch.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="activity">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="app is-ready" id="app">
+      <aside class="sidebar">
+        <a class="wordmark" href="index.html" aria-label="Pinch. overview"><span class="brand-mark" aria-hidden="true"></span><span>Pinch<span class="accent">.</span></span></a>
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span>Overview</a>
+          <a class="nav-link" href="accounts.html"><span aria-hidden="true">▣</span>Accounts</a>
+          <a class="nav-link" href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a class="nav-link is-active" href="activity.html" aria-current="page"><span aria-hidden="true">↕</span>Activity</a>
+        </nav>
+        <button class="profile" type="button" aria-label="Open profile settings"><span class="avatar">MS</span><span><strong>Maya</strong><small>Student account</small></span><b aria-hidden="true">•••</b></button>
+      </aside>
+
+      <div class="workspace">
+        <header class="mobile-header">
+          <a class="wordmark" href="index.html" aria-label="Pinch. overview"><span class="brand-mark" aria-hidden="true"></span><span>Pinch<span class="accent">.</span></span></a>
+          <button class="button button-primary button-compact" type="button" data-open-transaction>＋ Add</button>
+        </header>
+
+        <main id="main-content" class="content" tabindex="-1">
+          <header class="page-header">
+            <div><h1>Activity</h1><p>October 2026</p></div>
+            <button class="button button-primary" type="button" data-open-transaction>＋ Add transaction</button>
+          </header>
+
+          <section class="activity-summary" aria-label="Monthly activity summary">
+            <div><span>Money in</span><strong class="private-money" id="money-in">$2,560.00</strong></div>
+            <div><span>Money out</span><strong class="private-money" id="money-out">$742.80</strong></div>
+            <div><span>Net</span><strong class="private-money positive" id="money-net">+$1,817.20</strong></div>
+          </section>
+
+          <section class="activity-layout">
+            <article class="activity-chart-panel">
+              <div class="section-heading"><h2 id="spending-title">This month</h2><select id="spending-period" aria-label="Spending period"><option value="week">Week</option><option value="month" selected>Month</option><option value="semester">Semester</option></select></div>
+              <strong class="chart-total private-money" id="spending-amount">$742.80</strong>
+              <div class="bar-chart" id="spending-chart" role="img" aria-label="Monthly spending chart"></div>
+              <div class="chart-labels" id="chart-labels" aria-hidden="true"></div>
+            </article>
+
+            <article class="transaction-panel">
+              <div class="transaction-toolbar">
+                <div class="filters" role="group" aria-label="Filter transactions"><button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="expense">Out</button><button type="button" data-filter="income">In</button></div>
+                <label class="search"><span aria-hidden="true">⌕</span><input id="transaction-search" type="search" placeholder="Search" aria-label="Search transactions" /></label>
+              </div>
+              <div class="transaction-list" id="transaction-list"></div>
+              <div class="empty-state" id="transaction-empty" hidden>No transactions found.</div>
+            </article>
+          </section>
+        </main>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="index.html"><span aria-hidden="true">⌂</span>Overview</a>
+          <a href="accounts.html"><span aria-hidden="true">▣</span>Accounts</a>
+          <a href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a class="is-active" href="activity.html" aria-current="page"><span aria-hidden="true">↕</span>Activity</a>
+        </nav>
+      </div>
+    </div>
+
+    <dialog class="modal" id="transaction-modal" aria-labelledby="transaction-title">
+      <form id="transaction-form">
+        <div class="modal-heading"><h2 id="transaction-title">Add transaction</h2><button type="button" data-close-modal aria-label="Close">×</button></div>
+        <div class="type-switch" role="group" aria-label="Transaction type"><button class="is-active" type="button" data-transaction-type="expense">Money out</button><button type="button" data-transaction-type="income">Money in</button></div>
+        <input id="transaction-type" type="hidden" value="expense" />
+        <label class="amount-field"><span>Amount</span><div><b>$</b><input id="transaction-amount" type="number" min="0.01" step="0.01" placeholder="0.00" required /></div></label>
+        <label><span>Description</span><input id="transaction-description" type="text" maxlength="50" placeholder="Coffee, books, paycheck..." required /></label>
+        <div class="form-grid"><label><span>Category</span><select id="transaction-category"><option>Food</option><option>School</option><option>Housing</option><option>Transport</option><option>Fun</option><option>Income</option><option>Other</option></select></label><label><span>Date</span><input id="transaction-date" type="date" required /></label></div>
+        <div class="modal-actions"><button class="button button-secondary" type="button" data-close-modal>Cancel</button><button class="button button-primary" type="submit">Save</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

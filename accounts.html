@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View and manage your accounts in Pinch." />
+    <meta name="theme-color" content="#102a43" />
+    <title>Accounts — Pinch.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="accounts">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="app is-ready" id="app">
+      <aside class="sidebar">
+        <a class="wordmark" href="index.html" aria-label="Pinch. overview"><span class="brand-mark" aria-hidden="true"></span><span>Pinch<span class="accent">.</span></span></a>
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span>Overview</a>
+          <a class="nav-link is-active" href="accounts.html" aria-current="page"><span aria-hidden="true">▣</span>Accounts</a>
+          <a class="nav-link" href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a class="nav-link" href="activity.html"><span aria-hidden="true">↕</span>Activity</a>
+        </nav>
+        <button class="profile" type="button" aria-label="Open profile settings"><span class="avatar">MS</span><span><strong>Maya</strong><small>Student account</small></span><b aria-hidden="true">•••</b></button>
+      </aside>
+
+      <div class="workspace">
+        <header class="mobile-header">
+          <a class="wordmark" href="index.html" aria-label="Pinch. overview"><span class="brand-mark" aria-hidden="true"></span><span>Pinch<span class="accent">.</span></span></a>
+          <button class="button button-primary button-compact" type="button" id="connect-account">＋ Connect</button>
+        </header>
+
+        <main id="main-content" class="content" tabindex="-1">
+          <header class="page-header">
+            <div><h1>Accounts</h1><p>3 connected</p></div>
+            <div class="header-actions">
+              <button class="privacy-control" type="button" data-privacy-toggle aria-label="Hide balances" aria-pressed="false">Hide balances</button>
+              <button class="button button-primary" type="button" id="connect-account-desktop">＋ Connect account</button>
+            </div>
+          </header>
+
+          <section class="accounts-total" aria-label="Total across accounts">
+            <span>Total balance</span>
+            <strong class="money private-money" id="total-balance">$2,846.20</strong>
+            <small>Updated moments ago</small>
+          </section>
+
+          <section class="detail-list" aria-label="Connected accounts">
+            <article class="detail-account" id="checking">
+              <span class="account-symbol checking" aria-hidden="true">C</span>
+              <div class="detail-account-name"><h2>Campus Checking</h2><p>Checking · 2048</p></div>
+              <div><span>Available</span><strong class="private-money" id="checking-available">$1,436.20</strong></div>
+              <div><span>Current</span><strong class="private-money" id="checking-current">$1,486.20</strong></div>
+              <button type="button" aria-label="Open Campus Checking">→</button>
+            </article>
+            <article class="detail-account" id="savings">
+              <span class="account-symbol savings" aria-hidden="true">S</span>
+              <div class="detail-account-name"><h2>Student Savings</h2><p>Savings · 7712</p></div>
+              <div><span>Available</span><strong class="private-money">$1,320.00</strong></div>
+              <div><span>Interest</span><strong>3.85%</strong></div>
+              <button type="button" aria-label="Open Student Savings">→</button>
+            </article>
+            <article class="detail-account" id="cash">
+              <span class="account-symbol cash" aria-hidden="true">$</span>
+              <div class="detail-account-name"><h2>Cash Wallet</h2><p>Manual account</p></div>
+              <div><span>Balance</span><strong class="private-money">$40.00</strong></div>
+              <div><span>Updated</span><strong>Oct 21</strong></div>
+              <button type="button" aria-label="Open Cash Wallet">→</button>
+            </article>
+          </section>
+
+          <section class="simple-panel account-health">
+            <div><span class="status-dot"></span><strong>All accounts are connected</strong></div>
+            <p>Last synced today at 11:42 AM.</p>
+          </section>
+        </main>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="index.html"><span aria-hidden="true">⌂</span>Overview</a>
+          <a class="is-active" href="accounts.html" aria-current="page"><span aria-hidden="true">▣</span>Accounts</a>
+          <a href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a href="activity.html"><span aria-hidden="true">↕</span>Activity</a>
+        </nav>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

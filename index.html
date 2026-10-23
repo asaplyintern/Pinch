@@ -3,318 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Pinch helps college students understand their money, track connected accounts, and build SMART financial goals."
-    />
+    <meta name="description" content="A simple overview of your accounts in Pinch." />
     <meta name="theme-color" content="#102a43" />
-    <title>Pinch. — Student money, made clearer</title>
+    <title>Overview — Pinch.</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to dashboard</a>
+  <body data-page="overview">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <div class="loader" id="loader" aria-label="Loading Pinch." role="status">
       <div class="loader-word" aria-hidden="true">
-        <span>P</span><span>i</span><span>n</span><span>c</span><span>h</span><span class="loader-period">.</span>
+        <span>P</span><span>i</span><span>n</span><span>c</span><span>h</span><span class="accent">.</span>
       </div>
-      <p>Money clarity is loading</p>
     </div>
 
     <div class="app" id="app" aria-hidden="true">
       <aside class="sidebar">
-        <a class="wordmark" href="#" aria-label="Pinch. home">
-          <span class="wordmark-dot" aria-hidden="true"></span>
-          Pinch<span class="wordmark-period">.</span>
+        <a class="wordmark" href="index.html" aria-label="Pinch. overview">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Pinch<span class="accent">.</span></span>
         </a>
 
         <nav class="sidebar-nav" aria-label="Primary navigation">
-          <p class="nav-label">Your space</p>
-          <a class="nav-link is-active" href="#overview" aria-current="page">
-            <span class="nav-symbol" aria-hidden="true">⌂</span>
-            Overview
-          </a>
-          <a class="nav-link" href="#accounts">
-            <span class="nav-symbol" aria-hidden="true">▣</span>
-            Accounts
-          </a>
-          <a class="nav-link" href="#goals">
-            <span class="nav-symbol" aria-hidden="true">◎</span>
-            SMART goals
-          </a>
-          <a class="nav-link" href="#activity">
-            <span class="nav-symbol" aria-hidden="true">↕</span>
-            Activity
-          </a>
+          <a class="nav-link is-active" href="index.html" aria-current="page"><span aria-hidden="true">⌂</span>Overview</a>
+          <a class="nav-link" href="accounts.html"><span aria-hidden="true">▣</span>Accounts</a>
+          <a class="nav-link" href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a class="nav-link" href="activity.html"><span aria-hidden="true">↕</span>Activity</a>
         </nav>
 
-        <article class="sidebar-callout">
-          <div class="callout-icon" aria-hidden="true">✦</div>
-          <p class="eyebrow light">Weekly check-in</p>
-          <h2>You’re $24 under your dining plan.</h2>
-          <button type="button" id="review-spending">Review spending <span aria-hidden="true">→</span></button>
-        </article>
-
-        <button class="student-profile" type="button" aria-label="Open profile settings">
+        <button class="profile" type="button" aria-label="Open profile settings">
           <span class="avatar">MS</span>
-          <span class="student-profile-copy">
-            <strong>Maya S.</strong>
-            <small>State University · 2028</small>
-          </span>
-          <span aria-hidden="true">•••</span>
+          <span><strong>Maya</strong><small>Student account</small></span>
+          <b aria-hidden="true">•••</b>
         </button>
       </aside>
 
       <div class="workspace">
         <header class="mobile-header">
-          <a class="wordmark" href="#" aria-label="Pinch. home">
-            <span class="wordmark-dot" aria-hidden="true"></span>
-            Pinch<span class="wordmark-period">.</span>
+          <a class="wordmark" href="index.html" aria-label="Pinch. overview">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Pinch<span class="accent">.</span></span>
           </a>
-          <button class="button button-primary button-small" type="button" data-open-transaction>
-            <span aria-hidden="true">＋</span> Add
-          </button>
+          <button class="button button-primary button-compact" type="button" data-open-transaction>＋ Add</button>
         </header>
 
-        <main id="main-content" tabindex="-1">
-          <section class="page-heading" id="overview">
+        <main id="main-content" class="content content-overview" tabindex="-1">
+          <header class="page-header">
             <div>
-              <p class="eyebrow" id="today-label">Sunday, October 18</p>
-              <h1>Good <span id="day-period">morning</span>, Maya.</h1>
-              <p>Here’s how your money is looking between classes.</p>
+              <h1>Overview</h1>
+              <p id="today-label">October 23, 2026</p>
             </div>
-            <div class="heading-actions">
-              <button class="icon-button notification-button" type="button" aria-label="Notifications">
-                <span aria-hidden="true">♢</span>
-                <i aria-hidden="true"></i>
-              </button>
-              <button class="button button-primary" type="button" data-open-transaction>
-                <span aria-hidden="true">＋</span> Add transaction
-              </button>
+            <div class="header-actions">
+              <button class="privacy-control" type="button" data-privacy-toggle aria-label="Hide balances" aria-pressed="false">Hide balances</button>
+              <button class="button button-primary" type="button" data-open-transaction>＋ Add transaction</button>
+            </div>
+          </header>
+
+          <section class="balance-summary" aria-labelledby="balance-heading">
+            <div>
+              <p id="balance-heading">Total balance</p>
+              <strong class="money private-money" id="total-balance">$2,846.20</strong>
+            </div>
+            <div class="summary-meta">
+              <span><i class="status-dot"></i>3 accounts</span>
+              <span>Updated now</span>
             </div>
           </section>
 
-          <section class="dashboard-grid" aria-label="Financial overview">
-            <article class="balance-card">
-              <div class="card-topline">
-                <div>
-                  <p class="eyebrow light">Total balance</p>
-                  <div class="balance-amount">
-                    <strong class="private-money" id="total-balance">$2,846.20</strong>
-                    <button class="privacy-button" id="privacy-button" type="button" aria-label="Hide money amounts" aria-pressed="false">
-                      <span aria-hidden="true">◉</span>
-                    </button>
-                  </div>
-                </div>
-                <span class="change-pill"><span aria-hidden="true">↗</span> 8.4%</span>
-              </div>
+          <section class="account-overview" aria-labelledby="accounts-heading">
+            <div class="section-heading">
+              <h2 id="accounts-heading">Your accounts</h2>
+              <a href="accounts.html">View all <span aria-hidden="true">→</span></a>
+            </div>
 
-              <p class="balance-note">Across 3 connected accounts</p>
+            <div class="account-card-grid">
+              <a class="account-card" href="accounts.html#checking">
+                <span class="account-symbol checking" aria-hidden="true">C</span>
+                <span class="account-card-copy"><strong>Campus Checking</strong><small>Checking · 2048</small></span>
+                <span class="account-card-side"><strong class="private-money" id="overview-checking">$1,486.20</strong><span aria-hidden="true">→</span></span>
+              </a>
+              <a class="account-card" href="accounts.html#savings">
+                <span class="account-symbol savings" aria-hidden="true">S</span>
+                <span class="account-card-copy"><strong>Student Savings</strong><small>Savings · 7712</small></span>
+                <span class="account-card-side"><strong class="private-money">$1,320.00</strong><span aria-hidden="true">→</span></span>
+              </a>
+              <a class="account-card" href="accounts.html#cash">
+                <span class="account-symbol cash" aria-hidden="true">$</span>
+                <span class="account-card-copy"><strong>Cash Wallet</strong><small>Manual account</small></span>
+                <span class="account-card-side"><strong class="private-money">$40.00</strong><span aria-hidden="true">→</span></span>
+              </a>
+            </div>
+          </section>
 
-              <div class="balance-breakdown">
-                <div>
-                  <span>Safe to spend</span>
-                  <strong class="private-money" id="safe-to-spend">$486.20</strong>
-                </div>
-                <div>
-                  <span>Set aside for goals</span>
-                  <strong class="private-money" id="goal-total">$1,120.00</strong>
-                </div>
-              </div>
-
-              <div class="balance-orbit orbit-a" aria-hidden="true"></div>
-              <div class="balance-orbit orbit-b" aria-hidden="true"></div>
-            </article>
-
-            <article class="panel spending-panel" id="activity">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Spending pulse</p>
-                  <h2 id="spending-title">This month</h2>
-                </div>
-                <label class="select-wrap">
-                  <span class="sr-only">Spending period</span>
-                  <select id="spending-period">
-                    <option value="week">Week</option>
-                    <option value="month" selected>Month</option>
-                    <option value="semester">Semester</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="spending-summary">
-                <strong class="private-money" id="spending-amount">$742.80</strong>
-                <span id="spending-comparison">12% less than last month</span>
-              </div>
-
-              <div class="bar-chart" id="spending-chart" role="img" aria-label="Monthly spending bar chart"></div>
-              <div class="chart-labels" id="chart-labels" aria-hidden="true"></div>
-            </article>
-
-            <article class="panel accounts-panel" id="accounts">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Connected accounts</p>
-                  <h2>Your banks</h2>
-                </div>
-                <button class="text-button" id="connect-account" type="button">Connect <span aria-hidden="true">＋</span></button>
-              </div>
-
-              <div class="account-list" id="account-list">
-                <div class="account-row">
-                  <span class="account-icon checking" aria-hidden="true">C</span>
-                  <div class="account-copy">
-                    <strong>Campus Checking</strong>
-                    <span>•••• 2048 · Updated now</span>
-                  </div>
-                  <strong class="private-money account-balance">$1,486.20</strong>
-                </div>
-                <div class="account-row">
-                  <span class="account-icon savings" aria-hidden="true">S</span>
-                  <div class="account-copy">
-                    <strong>Student Savings</strong>
-                    <span>•••• 7712 · Updated now</span>
-                  </div>
-                  <strong class="private-money account-balance">$1,320.00</strong>
-                </div>
-                <div class="account-row">
-                  <span class="account-icon cash" aria-hidden="true">$</span>
-                  <div class="account-copy">
-                    <strong>Cash wallet</strong>
-                    <span>Manually tracked</span>
-                  </div>
-                  <strong class="private-money account-balance">$40.00</strong>
-                </div>
-              </div>
-
-              <button class="account-footer" id="manage-accounts" type="button">
-                Manage connected accounts <span aria-hidden="true">→</span>
-              </button>
-            </article>
-
-            <article class="panel goals-panel" id="goals">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">SMART goals</p>
-                  <h2>What you’re building</h2>
-                </div>
-                <button class="button button-secondary button-small" type="button" data-open-goal>
-                  <span aria-hidden="true">＋</span> New goal
-                </button>
-              </div>
-
-              <div class="goal-list" id="goal-list"></div>
-            </article>
-
-            <article class="panel insight-panel">
-              <div class="insight-symbol" aria-hidden="true">✦</div>
-              <div>
-                <p class="eyebrow">Pinch insight</p>
-                <h2>Your weekend spending is trending down.</h2>
-                <p>Keeping this pace could put an extra <strong class="private-money">$68</strong> toward your emergency fund this month.</p>
-              </div>
-              <button class="text-button" id="use-insight" type="button">Move $68 to goal <span aria-hidden="true">→</span></button>
-            </article>
+          <section class="overview-metrics" aria-label="Account summary">
+            <a href="activity.html">
+              <span>Safe to spend</span>
+              <strong class="private-money" id="safe-to-spend">$486.20</strong>
+            </a>
+            <a href="goals.html">
+              <span>In goals</span>
+              <strong class="private-money" id="goal-total">$1,120.00</strong>
+            </a>
+            <a href="activity.html">
+              <span>Spent this month</span>
+              <strong class="private-money" id="month-spent">$742.80</strong>
+            </a>
           </section>
         </main>
 
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <a class="mobile-nav-link is-active" href="#overview"><span aria-hidden="true">⌂</span>Home</a>
-          <a class="mobile-nav-link" href="#accounts"><span aria-hidden="true">▣</span>Accounts</a>
-          <a class="mobile-nav-link" href="#goals"><span aria-hidden="true">◎</span>Goals</a>
-          <a class="mobile-nav-link" href="#activity"><span aria-hidden="true">↕</span>Activity</a>
+          <a class="is-active" href="index.html" aria-current="page"><span aria-hidden="true">⌂</span>Overview</a>
+          <a href="accounts.html"><span aria-hidden="true">▣</span>Accounts</a>
+          <a href="goals.html"><span aria-hidden="true">◎</span>Goals</a>
+          <a href="activity.html"><span aria-hidden="true">↕</span>Activity</a>
         </nav>
       </div>
     </div>
 
     <dialog class="modal" id="transaction-modal" aria-labelledby="transaction-title">
-      <form id="transaction-form" method="dialog">
+      <form id="transaction-form">
         <div class="modal-heading">
-          <div>
-            <p class="eyebrow">Quick update</p>
-            <h2 id="transaction-title">Add a transaction</h2>
-          </div>
-          <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+          <h2 id="transaction-title">Add transaction</h2>
+          <button type="button" data-close-modal aria-label="Close">×</button>
         </div>
-
-        <div class="segmented-control" aria-label="Transaction type">
-          <button class="segment is-active" type="button" data-transaction-type="expense">Money out</button>
-          <button class="segment" type="button" data-transaction-type="income">Money in</button>
+        <div class="type-switch" role="group" aria-label="Transaction type">
+          <button class="is-active" type="button" data-transaction-type="expense">Money out</button>
+          <button type="button" data-transaction-type="income">Money in</button>
         </div>
         <input id="transaction-type" type="hidden" value="expense" />
-
-        <label class="amount-input">
-          <span>Amount</span>
-          <div><b>$</b><input id="transaction-amount" type="number" min="0.01" step="0.01" placeholder="0.00" required /></div>
-        </label>
+        <label class="amount-field"><span>Amount</span><div><b>$</b><input id="transaction-amount" type="number" min="0.01" step="0.01" placeholder="0.00" required /></div></label>
+        <label><span>Description</span><input id="transaction-description" type="text" maxlength="50" placeholder="Coffee, books, paycheck..." required /></label>
         <div class="form-grid">
-          <label>
-            <span>Description</span>
-            <input id="transaction-description" type="text" maxlength="50" placeholder="Coffee, paycheck, books..." required />
-          </label>
-          <label>
-            <span>Category</span>
-            <select id="transaction-category">
-              <option>Food</option>
-              <option>School</option>
-              <option>Housing</option>
-              <option>Transport</option>
-              <option>Fun</option>
-              <option>Income</option>
-              <option>Other</option>
-            </select>
-          </label>
-        </div>
-        <label>
-          <span>Date</span>
-          <input id="transaction-date" type="date" required />
-        </label>
-        <div class="modal-actions">
-          <button class="button button-secondary" type="button" data-close-modal>Cancel</button>
-          <button class="button button-primary" type="submit">Save transaction</button>
-        </div>
-      </form>
-    </dialog>
-
-    <dialog class="modal goal-modal" id="goal-modal" aria-labelledby="goal-title">
-      <form id="goal-form" method="dialog">
-        <div class="modal-heading">
-          <div>
-            <p class="eyebrow">Plan with purpose</p>
-            <h2 id="goal-title">Create a SMART goal</h2>
-          </div>
-          <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
-        </div>
-
-        <p class="modal-intro">Make it specific, measurable, achievable, relevant, and time-bound.</p>
-        <label>
-          <span>What are you saving for?</span>
-          <input id="goal-name" type="text" maxlength="45" placeholder="Emergency fund" required />
-        </label>
-        <div class="form-grid">
-          <label>
-            <span>Target amount</span>
-            <input id="goal-target" type="number" min="25" step="25" placeholder="$500" required />
-          </label>
-          <label>
-            <span>Target date</span>
-            <input id="goal-date" type="date" required />
-          </label>
-        </div>
-        <label>
-          <span>Why does this matter?</span>
-          <input id="goal-reason" type="text" maxlength="70" placeholder="So an unexpected expense doesn’t derail my semester" required />
-        </label>
-        <div class="smart-checklist" aria-label="SMART goal checklist">
-          <span><i>S</i> Specific</span>
-          <span><i>M</i> Measurable</span>
-          <span><i>A</i> Achievable</span>
-          <span><i>R</i> Relevant</span>
-          <span><i>T</i> Time-bound</span>
+          <label><span>Category</span><select id="transaction-category"><option>Food</option><option>School</option><option>Housing</option><option>Transport</option><option>Fun</option><option>Income</option><option>Other</option></select></label>
+          <label><span>Date</span><input id="transaction-date" type="date" required /></label>
         </div>
         <div class="modal-actions">
           <button class="button button-secondary" type="button" data-close-modal>Cancel</button>
-          <button class="button button-primary" type="submit">Create goal</button>
+          <button class="button button-primary" type="submit">Save</button>
         </div>
       </form>
     </dialog>
